@@ -1,0 +1,16 @@
+id: CustomError
+name: 'Custom Error Template'
+plugin_author: 'Endevver, LLC.'
+description: "Allows administrators to easily customize the system error message presented to users when a critical error occurs."
+version: 0.1
+schema_version: 1
+
+default_templates:
+  base_path: templates
+  global:system:
+    custom_error:
+      label: 'Custom System Error'
+
+callbacks:
+    template_param.error: $CustomError::CustomError::Plugin::error_param
+    template_source.error: $CustomError::CustomError::Plugin::error_source
